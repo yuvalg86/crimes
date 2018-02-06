@@ -6,12 +6,12 @@ Process CSV and saves some intereseting crime data per district and plots it int
 * >pip install matplotlib docopt numpy pandas
 
 # usage
-csv_to_heatmap.py [ --input=FILE --output=<FILE> ]
+csv_to_heatmap.py [ --input= FILE --output= FILE ]
 
 Options:
-  -h --help     prints this screen
-  --input=<FILE>    input csv to load [default: crimes.csv]
-  --output=<FILE>   Output csv to save [default: result.csv]
+-h --help     prints this screen
+--input=<FILE>    input csv to load [default: crimes.csv]
+--output=<FILE>   Output csv to save [default: result.csv]
 
 
 
