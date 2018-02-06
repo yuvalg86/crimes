@@ -1,8 +1,17 @@
 #!/usr/bin/python3
+"""Usage: csv_to_heatmap.py [--input=<FILE> --output=<FILE>]
 
+Process CSV and saves some intereseting crime data per district and plots it into a heatmap.
+
+Options:
+  -h --help     prints this screen
+  --input=<FILE>    input csv to load [default: crimes.csv]
+  --output=<FILE>   Output csv to save [default: result.csv]
+"""
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+from docopt import docopt
 
 
 CSV_INDEXED_COLS = ["District", "Primary Type"]
@@ -73,9 +82,10 @@ def plot(arranged):
 
 
 def main():
-    df = load_csv('crimes.csv')
+    arguments = docopt(__doc__, version='heatmap 0.1')
+    df = load_csv(arguments['--input'])
     processed_df = process_df(df)
-    save_csv(processed_df, 'result.csv')
+    save_csv(processed_df, arguments['--output'])
     plot(processed_df)
 
 
