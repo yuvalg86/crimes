@@ -28,6 +28,7 @@ def load_csv(filename):
         return pd.read_csv(filename, usecols=CSV_INDEXED_COLS)
     except Exception as e:
         print("error occurred while loading csv...", e)
+        exit(1)
 
 
 def save_csv(arranged, filename):
@@ -39,6 +40,7 @@ def save_csv(arranged, filename):
         arranged.to_csv(path_or_buf=filename)
     except Exception as e:
         print("error occurred while saving csv...", e)
+        exit(1)
 
 
 def process_df(df):
@@ -61,6 +63,7 @@ def process_df(df):
         return pivoted.fillna(value=0)
     except Exception as e:
         print("error occurred while processing data...", e)
+        exit(1)
 
 
 def plot(arranged):
@@ -79,6 +82,7 @@ def plot(arranged):
         plt.show()
     except Exception as e:
         print("error occurred while plotting...", e)
+        exit(1)
 
 
 def main():
