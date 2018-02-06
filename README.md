@@ -10,7 +10,9 @@ csv_to_heatmap.py [ --input= FILE --output= FILE ]
 
 Options:
 -h --help     prints this screen
+
 --input=<FILE>    input csv to load [default: crimes.csv]
+  
 --output=<FILE>   Output csv to save [default: result.csv]
 
 
